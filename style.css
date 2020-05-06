@@ -1,0 +1,40 @@
+h1{
+   
+    color:black;
+    margin: 0 auto;
+    font-family: 'Manrope', sans-serif;
+    text-transform: uppercase;
+    font-size: xx-large;
+    width: 100%;
+    letter-spacing: 7;
+    text-align: end;
+    height: 40px;
+    
+   
+}
+p{
+    font-style: italic;
+}
+body{
+    font-family: 'Manrope', sans-serif;
+    background-color: blanchedalmond;
+}
+.tablink {
+    background-color: black;
+    color: white;
+    width:24%;
+    letter-spacing: 3;
+    height: 40px;
+    font-size: x-large;
+}
+
+.content {
+    color:black;
+    padding: 20px 20px;
+    height:450px;
+    background-color: blanchedalmond;
+}
+img{
+    width: 500px;
+    height: 200px ;
+}

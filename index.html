@@ -1,1 +1,33 @@
-Hello World
+<html>
+    <head>
+        <title>
+            My Home Page
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="demo.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" >
+    </head>
+    <body>
+        <h1>All About Myself ! </h1>
+        
+            <button class="tablink" onclick="openPage('home',this)" id="defaultOpen">Home</button>
+            <button class="tablink" onclick="openPage('aboutme',this)" >About Me</button>
+            <button class="tablink" onclick="openPage('contact',this)">Contact</button>
+            <button class="tablink" onclick="openPage('gallery',this)">My Gallery</button>
+        <div id="home" class="content">
+            <h2>Iam Naren Raju , you can call me Naren</h2><br>
+            <p font>In this site you can explore all about Myself !!!!!</p><br>
+            <p>Please go through all sections to know more about me</p>
+        </div>
+        <div id=aboutme class="content">
+            <h2>This is About Me Section</h2>
+        </div>
+        <div id=contact class="content">
+            <h2>This is contact Section</h2>
+        </div>
+        <div id=gallery class="content">
+            <h1 style="color:black;text-align:center;font-weight: bold;">My Collection</h1>
+            <img src="naren.JPG" alt="My pic">
+        </div>
+    </body>
+</html>
