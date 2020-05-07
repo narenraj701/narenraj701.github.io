@@ -8,26 +8,74 @@
         <link rel="stylesheet" type="text/css" href="style.css" >
     </head>
     <body>
+        <div class="navbar">
         <h1>All About Myself ! </h1>
         
-            <button class="tablink" onclick="openPage('home',this)" id="defaultOpen">Home</button>
-            <button class="tablink" onclick="openPage('aboutme',this)" >About Me</button>
-            <button class="tablink" onclick="openPage('contact',this)">Contact</button>
-            <button class="tablink" onclick="openPage('gallery',this)">My Gallery</button>
+            <a  href="#home" >Home</a>
+            <a  href="#aboutme" >About Me</a>
+            <a  href="#contact">Contact</a>
+            <a  href="#gallery">My Gallery</a>
+        </div>
         <div id="home" class="content">
-            <h2>Iam Naren Raju , you can call me Naren</h2><br>
-            <p font>In this site you can explore all about Myself !!!!!</p><br>
-            <p>Please go through all sections to know more about me</p>
+            <h2>Hi, Iam Naren Raju, you can call me Naren</h2><br>
+            <h3>I am a student at GRIET pursuing IV year of my B.Tech</h3>
+            <h3>In this site you can explore all about Myself !!!!!</h3>
         </div>
         <div id=aboutme class="content">
-            <h2>This is About Me Section</h2>
+            <h4>About Me</h4>
+            <h3>Profession</h3>
+            <p>I Currently work at <strong>Zemoso Technologies</strong>  as an <strong>Intern</strong></p>
+            <h3>Technical Skills</h3>
+            <ul>
+                <li>Good understanding of Object Oriented Design</li>
+                <li>Java </li>
+                <li>Data Structures</li>
+            </ul>
+            <h3>Experience</h3>
+            <ul>
+                <li><p>Intern at <strong>OpenText</strong>  for five months,
+                     Worked on fixing Automation Scripts for the first two months and
+                      three months on consuming Google Rest API</p></li>
+            </ul>
+            <h3>Hobbies</h3>
+            <ul>
+                <li>Playing PC Games</li>
+                <li>Exploring about</li>
+                    <ul>
+                        <li>New Smartphones</li>
+                        <li>New Technologies</li>
+                    </ul>
+                <li>watching Movies</li>
+            </ul>
+        
         </div>
         <div id=contact class="content">
-            <h2>This is contact Section</h2>
+            <h3>Contact Me</h3>
+            <div class="formcontainer">
+            <form>
+                <label for="fname">First Name</label><br>
+                <input type="text" id="fname" name="firstname" placeholder="Your name.." required><br>
+            
+                <label for="lname">Last Name</label><br>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name.." required><br>
+
+                <label for="number">Mobile Number</label><br>
+                <input type="text" id="number" name="number" placeholder="Your number.." required><br>
+
+                <label for="message">Message</label><br>
+                <textarea id="message" name="message" placeholder="any message.." style="height:200px" required></textarea><br>
+
+                <input type="submit" value="Submit" >
+    
+            </form>
+            </div>
         </div>
         <div id=gallery class="content">
-            <h1 style="color:black;text-align:center;font-weight: bold;">My Collection</h1>
-            <img src="naren.JPG" alt="My pic">
+            <h2>My Collection</h2>
+            <img src="naren.JPG" />
+            <img src="naren.JPG" />
+            <img src="naren.JPG" />
+            <img src="naren.JPG" />
         </div>
     </body>
 </html>
