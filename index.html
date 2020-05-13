@@ -5,6 +5,7 @@
         </title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="style.css" >
+        <script src="validation.js" ></script>
     </head>
     <body>
         <div class="navbar">
@@ -51,15 +52,18 @@
         <div id=contact class="content">
             <h3>Contact Me</h3>
             <div class="formcontainer">
-                <form>
+                <form name="myform" onsubmit="return Validate()">
                     <label for="fname">First Name</label><br>
-                    <input type="text" id="fname" name="firstname" placeholder="Your name.." required><br>
+                    <input type="text" id="fname" name="fname" placeholder="Your name.." ><br>
             
                     <label for="lname">Last Name</label><br>
                     <input type="text" id="lname" name="lastname" placeholder="Your last name.." required><br>
 
                     <label for="number">Mobile Number</label><br>
-                    <input type="text" id="number" name="number" placeholder="Your number.." required><br>
+                    <input type="text" id="number" name="MobileNumber" placeholder="Your number.." required><br>
+                    
+                    <label for="email">Email</label><br>
+                    <input type="text" id="email" name="email" placeholder="your mail id" required><br>
 
                     <label for="message">Message</label><br>
                     <textarea id="message" name="message" placeholder="any message.." style="height:200px" required></textarea><br>
