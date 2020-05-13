@@ -107,5 +107,16 @@
                 x[slideIndex - 1].style.display = "block";
             }
         </script>
+        <script>
+            let requestURL ="./images.json";
+            let request = new XMLHttpRequest();
+            request.open('GET', requestURL);
+            request.responseType = 'json';
+            request.send();
+            request.onload = function() {
+            const value = request.response;
+            }
+            console.log(value);
+        </script>
     </body>
 </html>
