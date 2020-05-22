@@ -5,9 +5,11 @@
         </title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="style.css" >
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script src="validation.js" ></script>
     </head>
     <body>
+        
         <div class="navbar">
         <h1>All About Myself ! </h1>
         
@@ -15,6 +17,7 @@
             <a  href="#aboutme" >About Me</a>
             <a  href="#contact">Contact</a>
             <a  href="#gallery">My Gallery</a>
+            <a href="#galleryAdmin">Gallery Admin</a>
         </div>
         <div id=home class="content">
             <h2>Hi, Iam Naren Raju, you can call me Naren</h2><br>
@@ -73,50 +76,34 @@
             </div>
         </div>
         <div id=gallery class="content">
-            <h2>My Collection</h2>
-            <img class="slides" src="naren.jpg" />
-            <img class="slides" src="bear.jpg" />
-            <img class="slides" src="lion.jpg" />
-            <img class="slides" src="bear.jpg" />
-            <button onclick="plusDivs(-1)">prev</button>
-            <button onclick="plusDivs(1)">next</button>
+            <div id="gallerydata" class="container">
+            </div>
         </div>
-        <footer class="footcontainer">
-            <p style="text-align: center;">Get in Touch @ Social Media </p>
-            <div style="text-align:center">
-                <a href="http://www.facebook.com">facebook</a>&nbsp;​​​​​​​​​​​​​​​​​​​​​​​​
-                <a href="https://twitter.com/">twitter</a> 
-              </div>
-        </footer>
-        <script>
-            var slideIndex = 1;
-            showDivs(slideIndex);
-
-            function plusDivs(n) {
-                showDivs(slideIndex += n);
-            }
-
-            function showDivs(n) {
-                var i;
-                var x = document.getElementsByClassName("slides");
-                if (n > x.length) { slideIndex = 1 }
-                if (n < 1) { slideIndex = x.length }
-                for (i = 0; i < x.length; i++) {
-                    x[i].style.display = "none";
-                }
-                x[slideIndex - 1].style.display = "block";
-            }
-        </script>
-        <script>
-            let requestURL ="./images.json";
-            let request = new XMLHttpRequest();
-            request.open('GET', requestURL);
-            request.responseType = 'json';
-            request.send();
-            request.onload = function() {
-            const value = request.response;
-            console.log(value);
-            }
-        </script>
+        </div>
+        <div id=galleryAdmin class="content">
+                <div id="data" class="container">
+                    
+                </div>
+                <div id="formdiv" style="display: none;">
+                    <br>
+                    <br>
+                    <br>
+                    <h1 id="addedit"></h1>
+                    <div class="formcontainer">
+                    <form name="myform"  >
+                        <input type="text" style="display: none;" id="index" name="index" value="-1">
+                        <label for="Image-URL">Image URL</label><br>
+                        <input type="text" id=Image-URL name="Image-URL" value="" required><br>
+                        <label for="Name">Name</label><br>
+                        <input type="text" id=Name name="Name" value="" required><br>
+                        <label for="Information">Information</label><br>
+                        <input type="text" id=Information name="Information" value="" required><br>
+                        <label for="Date">Date</label><br>
+                        <input type="date" id=Date name="Date" value="" required><br><br>
+                        <button type="submit" id="submit">Submit form</button>
+                        <input type="reset" style="display: none;" id="reset" value="Reset Form">
+                    </form>
+                </div>
+        </div>
     </body>
 </html>

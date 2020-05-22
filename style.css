@@ -33,7 +33,7 @@ h3{
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
-  letter-spacing: 5;
+  letter-spacing: 4;
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -64,7 +64,40 @@ input[type=submit]{
 }
 input[type=submit]:hover {
   background-color: #45a049;
-  }
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.add{
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.edit{
+  background-color: #008CBA;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  
+}
+.delete{
+  background-color: #f44000;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
+
 p{
   font-style: italic;
 }
@@ -73,17 +106,6 @@ p{
   padding: 100px 0 20px 20px;
   height:700px;
 }
-.content img{
-  width: 500px;
-  height: 300px;
-  padding:10px;
-}
-img{
-  width: 500px;
-  height: 200px;
-  display: inline-block;
-}
-
 .footcontainer{
   padding: 5px;
   padding-bottom: 5px;
@@ -93,3 +115,21 @@ img{
   border-radius: 5px;
   margin-bottom: 0px;
 }
+.container{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 1px;
+  grid-row-gap: 1px;
+  }
+  .container imagebox{
+      max-height: 289;
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      margin: 10px 10px;
+      padding: 20px 20px;
+  
+  }
+  img{
+      width: 400px;
+      height: 250px;
+  }
