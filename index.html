@@ -13,11 +13,12 @@
         <div class="navbar">
         <h1>All About Myself ! </h1>
         
-            <a  href="#home" >Home</a>
-            <a  href="#aboutme" >About Me</a>
-            <a  href="#contact">Contact</a>
-            <a  href="#gallery">My Gallery</a>
-            <a href="#galleryAdmin">Gallery Admin</a>
+        <button class="tablink" onclick="openPage('home', this)" id="defaultOpen">Home</button>
+        <button class="tablink" onclick="openPage('aboutme', this)" >About Me</button>
+        <button class="tablink" onclick="openPage('contact', this)">Contact Me</button>
+        <button class="tablink" onclick="openPage('gallery', this)">Gallery</button>
+        <button class="tablink" onclick="openPage('galleryAdmin', this)">Admin Gallery</button>
+
         </div>
         <div id=home class="content">
             <h2>Hi, Iam Naren Raju, you can call me Naren</h2><br>
@@ -76,24 +77,25 @@
             </div>
         </div>
         <div id=gallery class="content">
+            <h3>My Collection</h3>
             <div id="gallerydata" class="container">
             </div>
         </div>
         </div>
         <div id=galleryAdmin class="content">
+            <h3>Admin Collection</h3>
                 <div id="data" class="container">
                     
                 </div>
                 <div id="formdiv" style="display: none;">
-                    <br>
-                    <br>
+                    
                     <br>
                     <h1 id="addedit"></h1>
                     <div class="formcontainer">
                     <form name="myImageform" onsubmit="return validateImage()" >
                         <input type="text" style="display: none;" id="index" name="index" value="-1">
                         <label for="Image-URL">Image URL</label><br>
-                        <input type="text" id=Image-URL name="Image-URL" value="" required><br>
+                        <input type="text" id=Image-URL name="Image-URL" value="" required ><br>
                         <label for="Name">Name</label><br>
                         <input type="text" id=Name name="Name" value="" required><br>
                         <label for="Information">Information</label><br>

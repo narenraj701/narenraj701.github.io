@@ -1,6 +1,7 @@
 var arrItems=[];
 var i=-1;
 $(document).ready(function () {
+    document.getElementById("defaultOpen").click();
     $.getJSON("data-with-image.json", function (data) {
 
          // The array to store JSON items.
@@ -16,6 +17,18 @@ $(document).ready(function () {
     })
     
 });
+function openPage(pageName,elmnt){
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("content");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+}
 function setImageGallery(val){
     document.getElementById("gallerydata").innerHTML+=`
     <div class="imagebox" style="max-width: 416;">
