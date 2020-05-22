@@ -90,7 +90,7 @@
                     <br>
                     <h1 id="addedit"></h1>
                     <div class="formcontainer">
-                    <form name="myform"  >
+                    <form name="myImageform" onsubmit="return validateImage()" >
                         <input type="text" style="display: none;" id="index" name="index" value="-1">
                         <label for="Image-URL">Image URL</label><br>
                         <input type="text" id=Image-URL name="Image-URL" value="" required><br>
@@ -99,8 +99,8 @@
                         <label for="Information">Information</label><br>
                         <input type="text" id=Information name="Information" value="" required><br>
                         <label for="Date">Date</label><br>
-                        <input type="date" id=Date name="Date" value="" required><br><br>
-                        <button type="submit" id="submit">Submit form</button>
+                        <input type="date" id="Date" name="Date" value="" required><br><br>
+                        <input type="submit" id="submit" >
                         <input type="reset" style="display: none;" id="reset" value="Reset Form">
                     </form>
                 </div>

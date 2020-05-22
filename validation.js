@@ -19,21 +19,22 @@ $(document).ready(function () {
 function setImageGallery(val){
     document.getElementById("gallerydata").innerHTML+=`
     <div class="imagebox" style="max-width: 416;">
-    <img src="${val.Image}"><br><br>
+    <img src="${val.Image}"><br>
     `
 }
 function setImage(val){
     i+=1;
     document.getElementById("data").innerHTML+=`
     <div id="${i}" class="imagebox" style="max-width: 416;">
-    <img src="${val.Image}"><br><br>
-    <button class="add" onclick="openForm('add')">Add</button> <button class="edit" onclick="editImage(${i})">Edit</button> <button class="delete" style="align:end;" onclick="removeImage(${i})">Remove</button><br>
+    <img src="${val.Image}"><br><p id="PicInfo${i}">"${val.Information}"</p><br>
+    <button class="add" onclick="openForm('add')">Add</button> <button class="edit" onclick="editImage(${i})">Edit</button> <button class="delete" style="align:end;" onclick="removeImage(${i})">Remove</button>
     `
 }
 function openForm(act){
     let elem=document.getElementById("data");
     elem.style.display='none';
     let formelem=document.getElementById("formdiv");
+    
     formelem.style.display='block';
     if(act==="add"){
         document.getElementById("addedit").innerHTML="Add New Image Details";
@@ -46,11 +47,15 @@ function openForm(act){
 }
 function saveData(event){
     event.preventDefault();
+    if(validate==false){
+        return ;
+    }
     let imageurl=document.getElementById("Image-URL").value;
     let name=document.getElementById("Name").value;
     let info=document.getElementById("Information").value;
     let dateObj=document.getElementById("Date").value;
     let id=document.getElementById("index").value;
+    console.log(localStorage);
     let obj={
         "Image": imageurl,
         "Name":name,
@@ -63,9 +68,11 @@ function saveData(event){
     setImage(obj);
     }
     else{
+        let idval="PicInfo"+id;
         arrItems[id]=obj;
         console.log(arrItems[id].Image);
         document.getElementById(id).children[0].src=arrItems[id].Image;
+        document.getElementById(idval).innerHTML=arrItems[id].Information;
     }
     console.log(arrItems);
     let formelem=document.getElementById("formdiv");
@@ -85,6 +92,7 @@ function editImage(i){
     document.getElementById("Name").value=arrItems[i].Name;
     document.getElementById("Information").value=arrItems[i].Information;
     document.getElementById("Date").value=arrItems[i].UploadedDate;
+    
     openForm("edit");
 
 }
@@ -117,5 +125,18 @@ function Validate() {
         alert("Not a Valid number");
         document.myform.MobileNumber.focus();
         return false;
+    }
+}
+var validate;
+function validateImage(){
+    currentDate=new Date(document.getElementById("Date").value);
+    if(currentDate>(new Date).getTime())
+    {
+    alert("enter valid date");
+    document.getElementById("Date").value="";
+    validate=false;
+    }
+    else{
+        validate=true;
     }
 }
