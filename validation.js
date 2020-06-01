@@ -40,7 +40,7 @@ function setImage(val){
     document.getElementById("data").innerHTML+=`
     <div id="${i}" class="imagebox" style="max-width: 416;">
     <img src="${val.Image}"><br><p id="PicInfo${i}">"${val.Information}"</p><br>
-    <button class="add" onclick="openForm('add')">Add</button> <button class="edit" onclick="editImage(${i})">Edit</button> <button class="delete" style="align:end;" onclick="removeImage(${i})">Remove</button>
+    <button class="edit" onclick="editImage(${i})">Edit</button> <button class="delete" style="align:end;" onclick="removeImage(${i})">Remove</button>
     `
 }
 function openForm(act){

@@ -5,13 +5,14 @@
         </title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="style.css" >
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script src="validation.js" ></script>
     </head>
     <body>
         
         <div class="navbar">
-        <h1>All About Myself ! </h1>
+        <h1>My Web Page ! </h1>
         
         <button class="tablink" onclick="openPage('home', this)" id="defaultOpen">Home</button>
         <button class="tablink" onclick="openPage('aboutme', this)" >About Me</button>
@@ -84,6 +85,7 @@
         </div>
         <div id=galleryAdmin class="content">
             <h3>Admin Collection</h3>
+            <button class="add" onclick="openForm('add')">Add A Picture</button> 
                 <div id="data" class="container">
                     
                 </div>
