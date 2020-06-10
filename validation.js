@@ -113,20 +113,8 @@ function editImage(i){
 function Validate() {
     var mail = document.forms["myform"]["email"].value;
 
-    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if (!mail.match(mailformat)) {
-        {
-            alert("Please Enter a valid email address!");
-            document.myform.email.focus();
-            return false;
-        }
-    }
+   
     let name = document.forms["myform"]["fname"].value;
-    if (name == "") {
-      alert("Name must be filled out");
-      document.myform.fname.focus();
-      return false;
-    }
     
     if (!isNaN(name)) {
         alert("Enter a valid Name");
@@ -139,15 +127,28 @@ function Validate() {
         document.myform.MobileNumber.focus();
         return false;
     }
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (!mail.match(mailformat)) {
+        {
+            alert("Please Enter a valid email address!");
+            document.myform.email.focus();
+            return false;
+        }
+    }
 }
 var validate;
 function validateImage(){
     currentDate=new Date(document.getElementById("Date").value);
+    var image=document.forms['myImageform']['Image-URL'].value;
     if(currentDate>(new Date).getTime())
     {
     alert("enter valid date");
     document.getElementById("Date").value="";
     validate=false;
+    }
+    else if(image.match(/\.(jpeg|jpg|gif|png)$/) == null){
+        alert("Not a valid Image source");
+        validate=false;
     }
     else{
         validate=true;
